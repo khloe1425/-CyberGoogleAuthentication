@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose=require('mongoose');
-const dotenv = require('dotenv')
+const dotenv = require('dotenv');
 const passport = require('passport')
 const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
@@ -10,9 +10,13 @@ var app=express();
 const PORT = process.env.PORT||3000;
 dotenv.config({ path: './config/config.env' })
 
-mongoose.connect('mongodb+srv://tantrungse:Trung2k1@cluster0.suqrk.mongodb.net/GoogleAuth?retryWrites=true&w=majority',{
+mongoose.connect(process.env.MONGO_CONNECT_URL,{
     useNewUrlParser:true,
     useUnifiedTopology: true
+}).then(()=>{
+  console.log('connect mongo thành công')
+}).catch((err)=>{
+  console.log(err)
 })
 app.use(express.static('public'))
 app.set('view engine','ejs');
