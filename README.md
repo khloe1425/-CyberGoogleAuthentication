@@ -10,9 +10,11 @@
     GOOGLE_CLIENT_SECRET = <your_google_client_secret>
 2.install packet :
  `npm install`
+ 
 3.run server:
- `npm run dev`
-4. Open the link [http://localhost:3000/](http://localhost:3000/)
+ `npm run dev`]
+ 
+4. Open the link [http://localhost:3000/](http://localhost:3000/).
 Happy Hacking Goodluck !!
  
  
